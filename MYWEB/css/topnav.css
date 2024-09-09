@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "Itim", cursive;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: 0.5s;
+}
+
+header {
+    position: sticky;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    transition: top 0.5s ease-in-out; /* การเปลี่ยนแปลงสมูท */
+}
+
+
+.container-me{
+    /* border: 1px solid red; */
+    width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-container{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid red; */
+    width: 55%;
+    font-size: 16px;
+    font-weight: 100;
+
+}
+
+.left-container button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    font-weight: 100;
+    /* border: 1px solid red; */
+    height: 21px;
+    /* text-align: center; จัดให้ข้อความอยู่ตรงกลาง */
+    transition: 0.4s;
+    transform: translate(0, -1.1px);
+}
+
+.left-container button:hover {
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    height: 21px;
+    background-color: transparent;
+    outline: none;
+    font-weight: 100;
+    /* border: 1px solid red; */
+    /* text-align: center; จัดให้ข้อความอยู่ตรงกลาง */
+    cursor: pointer;
+    color: rgb(177, 175, 175);
+    transition: 0.4s;
+    transform: translate(0, -1.1px);
+
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fffefc;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0.6rem 0;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+}
+
+
+/* แสดงเมนูเมื่อมีคลาส show */
+/* .show {
+    display: block;
+
+} */
+
+.dropdown-menu a {
+    color: black;
+    padding: 10px 20px; 
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    width: 150px; /* ตั้งค่าความกว้างให้เท่ากัน */
+}
+
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.image{
+    /* border: 1px solid red; */
+    /* margin: 0 1rem; */
+    transition: 0.5s;
+}
+
+.image:hover{
+    /* border: 1px solid red; */
+    position: relative;
+    /* margin: 0 1rem; */
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    /* border: 1px solid red; */
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.container-me ul li{
+    /* margin: 0 0.8rem; */
+    list-style: none;
+    /* border: 1px solid red; */
+
+}
+
+.container-me ul li a{
+    margin: 0 0.8rem;
+    text-decoration: none;
+    color: black;
+    transition: 0.4s;
+    /* border: 1px solid red; */
+
+}
+
+.container-me ul li a:hover{
+    text-decoration: none;
+    color: rgb(177, 175, 175);
+    transition: 0.4s;
+}
+
+.right-container{
+    display: flex;
+    margin: 0 1rem;
+    /* border: 1px solid red; */
+    width: 45%;
+    align-items: center;
+}
+
+form input[type=search]{
+    border: 0.5px solid rgb(128, 128, 128);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: 300px;
+    margin: 0 1rem;
+    outline: none;
+}
+
+button[type=submit]{
+    background-color: rgb(255, 172, 172);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.5s;
+    margin-right: 0.1rem;
+    width: 65px;
+}
+
+button[type=submit]:hover{
+    background-color: rgba(255, 172, 172, 0.555);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 65px;
+
+}
+
+button[type=reset]{
+    background-color: rgb(156, 158, 255);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.5s;
+    width: 70px;
+}
+
+button[type=reset]:hover{
+    background-color: rgba(156, 158, 255, 0.555);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 70px;
+
+}
+
+.right-container img{
+    margin-left: 1rem;
+    transition: 0.3s;
+}
+.right-container img:hover{
+    margin-left: 1rem;
+    opacity: 0.5;
+    transition: 0.3s;
+    
+}
+
+.right-container .dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu-icon{
+    display: none;
+    position: absolute;
+    /* border: 1px solid red; */
+    background-color: white;
+    border-radius: 1rem;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin: 0.5rem 1rem 0;
+}
+
+.dropdown-menu-icon a{
+    color: black;
+    padding: 10px 5px; 
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    width: 150px; /* ตั้งค่าความกว้างให้เท่ากัน */
+}
+
+.dropdown-menu-icon a:hover{
+    background-color: #f1f1f1;
+}

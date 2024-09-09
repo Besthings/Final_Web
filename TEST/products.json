@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "สินค้า A",
+      "price": 500,
+      "description": "คำอธิบายสินค้า A",
+      "image": "path/to/image_a.jpg"
+    },
+    {
+      "id": 2,
+      "name": "สินค้า B",
+      "price": 700,
+      "description": "คำอธิบายสินค้า B",
+      "image": "path/to/image_b.jpg"
+    }
+  ]
+  
