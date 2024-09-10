@@ -44,11 +44,11 @@ section{
     font-size: 70px;
     /* border: 1px solid red; */
     margin: 5px;
-    color: white;
+    color: rgba(51, 51, 51, 0.925);
 }
 
-.sec-left-container h4, p{
-    text-shadow: 3px 3px 3px gray;
+.sec-left-container h4, .sec-left-container p{
+    text-shadow: 3px 3px 3px rgb(105, 105, 105);
 }
 
 .sec-left-container a{
@@ -142,6 +142,8 @@ section{
     margin: 1rem;
 }
 
+/* recommend */
+
 .recommend{
     width: 1200px;
     /* border:  1px solid red; */
@@ -157,7 +159,8 @@ section{
     margin-bottom: 3rem;
 }
 
-.grid{
+/* menucontainer-recommend */
+.grid-recommend{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3rem;
@@ -165,30 +168,49 @@ section{
     /* margin-left: 3rem; */
 }
 
-.content-recommend{
-    padding: 0.7rem 0;
-    background-color: antiquewhite;
-    /* border: 1px solid black; */
-    text-align: center;
+.grid-recommend img{
+    width: 246px;
     /* border: 1px solid red; */
+    border-radius: 1rem;
     transition: 0.5s;
 }
 
-.content-recommend:hover{
-    background-color: rgb(206, 206, 206);
+
+.grid-recommend a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    /* align-items: center; */
+    border-radius: 1rem;
+    color: black;
+    background-color: rgb(255, 231, 199);
+    padding: 0.5rem;
+    /* border: 1px solid red; */
+    box-shadow: 3px 3px 7px gray;
+    transition: 0.5s;
+}
+
+.grid-recommend a:hover{
+    box-shadow: 3px 3px 40px gray;
     transition: 0.5s;
     opacity: 0.8;
-    padding: 1rem;
+    /* margin: 1rem; */
 }
 
-.content-recommend h2{
-    text-align: left;
-    font-size: 20px;
+.grid-recommend h3, p{
     /* border: 1px solid red; */
-    width: 85%;
-    margin: 1rem auto;
+    margin-top: 5px;
+    color: rgb(255, 109, 109);
+    text-shadow: none;
 }
 
-.content-recommend img{
-    width: 240px;
+.grid-recommend span{
+    background-color: rgb(255, 255, 255);
+    padding: 0.3rem;
+    border-radius: 1rem;
+    width: 100px;
+    /* box-shadow: 3px 3px 5px gray; */
+    margin-left: 3px;
+    margin-bottom: 0.3rem;
+    text-align: center;
 }

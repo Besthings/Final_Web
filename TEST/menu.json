@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "name": "Pad Thai",
+      "price": 50,
+      "description": "Stir-fried noodles with shrimp, tofu, and peanuts.",
+      "image": "padthai.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Som Tum",
+      "price": 40,
+      "description": "Spicy green papaya salad with lime and peanuts.",
+      "image": "somtum.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Tom Yum",
+      "price": 60,
+      "description": "Hot and sour shrimp soup with lemongrass and lime.",
+      "image": "tomyum.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Green Curry",
+      "price": 70,
+      "description": "Spicy green curry with chicken and coconut milk.",
+      "image": "greencurry.jpg"
+    }
+  ]
+  

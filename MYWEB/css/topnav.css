@@ -44,39 +44,16 @@ header {
 
 }
 
-.left-container button {
-    border: none;
-    background-color: transparent;
-    font-size: 16px;
-    outline: none;
-    font-weight: 100;
-    /* border: 1px solid red; */
-    height: 21px;
-    /* text-align: center; จัดให้ข้อความอยู่ตรงกลาง */
-    transition: 0.4s;
-    transform: translate(0, -1.1px);
+/* Ensure the dropdown container is positioned relative */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.left-container button:hover {
-    border: none;
-    background-color: white;
-    font-size: 16px;
-    height: 21px;
-    background-color: transparent;
-    outline: none;
-    font-weight: 100;
-    /* border: 1px solid red; */
-    /* text-align: center; จัดให้ข้อความอยู่ตรงกลาง */
-    cursor: pointer;
-    color: rgb(177, 175, 175);
-    transition: 0.4s;
-    transform: translate(0, -1.1px);
-
-}
-
-
-.dropdown-menu {
-    display: none;
+/* Hidden menu */
+.dropdown #dropdownMenul {
+    visibility: hidden;
+    display: block;
     position: absolute;
     background-color: #fffefc;
     min-width: 160px;
@@ -85,26 +62,28 @@ header {
     padding: 0.6rem 0;
     margin-top: 0.5rem;
     border-radius: 1rem;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
 }
 
+/* Show menu on hover */
+.dropdown:hover #dropdownMenul {
+    visibility: visible;
+    opacity: 1;
+}
 
-/* แสดงเมนูเมื่อมีคลาส show */
-/* .show {
-    display: block;
-
-} */
-
-.dropdown-menu a {
+/* Dropdown menu items */
+.dropdown-menul a {
     color: black;
-    padding: 10px 20px; 
+    padding: 10px 10px;
     text-decoration: none;
     text-align: left;
-    display: block;
-    width: 150px; /* ตั้งค่าความกว้างให้เท่ากัน */
+    display: inline-block;
+    width: 150px;
 }
 
-
-.dropdown-menu a:hover {
+/* Menu item hover effect */
+.dropdown-menul a:hover {
     background-color: #f1f1f1;
 }
 
@@ -122,7 +101,7 @@ header {
     transition: 0.5s;
 }
 
-ul{
+.navl{
     display: flex;
     list-style: none;
     /* border: 1px solid red; */
@@ -230,11 +209,14 @@ button[type=reset]:hover{
     /* border: 1px solid red; */
     background-color: white;
     border-radius: 1rem;
-    min-width: 160px;
+    min-width: 140px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    margin: 0.5rem 1rem 0;
+    margin: 0.1rem 0;
+    padding: 1rem;
+    transition: 0.3s;
 }
+
 
 .dropdown-menu-icon a{
     color: black;
@@ -242,7 +224,7 @@ button[type=reset]:hover{
     text-decoration: none;
     text-align: left;
     display: block;
-    width: 150px; /* ตั้งค่าความกว้างให้เท่ากัน */
+    width: 120px;
 }
 
 .dropdown-menu-icon a:hover{
