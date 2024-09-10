@@ -3,7 +3,7 @@ fetch('./json/products.json')
   .then(data => {
     console.log('Product Data:', data);  // ตรวจสอบข้อมูลใน Console
     const menuContainer = document.getElementById('grid-recommend');
-    const limitedData = data.slice(0, 8);
+    const limitedData = data.slice(0);
 
     limitedData.forEach(item => {
       const menuItem = document.createElement('div');
