@@ -27,3 +27,6 @@ fetch('./json/products.json')
     }
   })
   .catch(error => console.error('Error loading product details:', error));
+
+
+  

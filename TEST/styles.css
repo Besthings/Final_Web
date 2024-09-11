@@ -1,0 +1,32 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #product-list {
+    padding: 20px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
+  button.buy-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  

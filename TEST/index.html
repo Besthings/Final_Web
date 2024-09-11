@@ -3,16 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Display</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Products</title>
+    <style>
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .modal.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
-<div class="menu-container" id="menuContainer">
-    <!-- Menu items will be inserted here dynamically -->
-</div>
+    <div class="product-list" id="product-list"></div>
 
-<script src="menu.js"></script>
+    <div class="modal" id="product-modal">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-price"></p>
+        <img id="modal-image" src="" alt="Product Image">
+        <button id="close-modal">Close</button>
+    </div>
+
+    <script src="app.js"></script>
 
 </body>
 </html>
