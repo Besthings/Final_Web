@@ -76,7 +76,7 @@ function buyItem(itemId) {
   localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
 
   // ทำสิ่งอื่นๆ เช่น redirect ไปหน้าสั่งซื้อ
-  window.location.href = 'purchase.html';
+  // window.location.href = 'purchase.html';
 }
 
 // ปิด Modal เมื่อคลิกปุ่ม X
@@ -94,14 +94,21 @@ window.onclick = function(event) {
 
 
   // สั่ง-ซื้อ item
-  function buyItem(itemId, event) {
-    event.preventDefault();  // Prevent default link behavior
+  // function buyItem(itemId, event) {
+  //   event.preventDefault();  // Prevent default link behavior
   
-    // Save item ID to localStorage
-    let purchasedItems = JSON.parse(localStorage.getItem('purchasedItems')) || [];
-    purchasedItems.push(itemId);
-    localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
+  //   // Save item ID to localStorage
+  //   let purchasedItems = JSON.parse(localStorage.getItem('purchasedItems')) || [];
+  //   purchasedItems.push(itemId);
+  //   localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
   
-    // Redirect to purchase page
-    window.location.href = 'purchase.html';
-  }
+  //   // Redirect to purchase page
+  //   window.location.href = 'purchase.html';
+  // }
+
+
+  
+  
+  
+
+  
