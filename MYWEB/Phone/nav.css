@@ -1,0 +1,157 @@
+/* General styles for smaller screens */
+@media (max-width: 768px) {
+    .container-me {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        padding: 0 1rem;
+        /* border: 1px solid red; */
+        justify-content: space-between;
+    }
+
+
+    .left-container, .right-container {
+    
+    }
+
+    .left-container {
+        font-size: 14px;
+        width: 70px;
+    }
+
+    .right-container {
+        /* margin: 15px; */
+        /* border: 1px solid red; */
+        width: 100px;
+    }
+
+    /* ซ่อนเมนู */
+    .navl{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        padding: 10px;
+    }
+
+    /* แสดงปุ่มสามขีด */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* เมื่อเมนูถูกเปิด */
+    .hamburger-toggle.active {
+        display: block;
+    }
+    
+
+    .container-me ul li a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .dropdown-menu-icon {
+        min-width: 100px;
+        /* border: 1px solid red; */
+        position: absolute;
+        transform: translate(-4rem, 0.2rem);
+    }
+
+    .dropdown-menu-icon a {
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .cart img{
+        width: 35px !important;
+        margin: 0 1rem;
+    }
+
+    .drop-btni{
+        width: 40px !important;
+    }
+
+    form input[type=search] {
+        width: 100%;
+        margin: 0 0.5rem;
+        display: none;
+    }
+
+    button[type=submit], button[type=reset] {
+        width: auto;
+        padding: 8px;
+        display: none;
+    }
+
+    .cartcount {
+        width: 20px;
+        height: 20px;
+        top: -5px !important;
+        right: 8px !important;
+        font-size: 12px;
+        /* border: 1px solid red; */
+    }
+
+    .w1-3k{
+        width: 100%;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+
+    .w1-3k h1{
+        color: rgb(255, 104, 129);
+        text-align: center;
+        position: relative;
+        margin: 0.5rem auto;
+        border-bottom: 2px solid rgb(180, 180, 180);
+        padding: 1rem;
+        width: 100%;
+        
+    }
+}
+
+/* Styles for very small screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .container-me {
+        padding: 0 0.5rem;
+    }
+
+    .left-container {
+        font-size: 12px;
+    }
+
+    .right-container {
+        margin: 0;
+        text-align: center;
+    }
+
+    .right-container img {
+        width: 80px;
+        margin-left: 0;
+    }
+
+    .dropdown-menu-icon {
+        min-width: 80px;
+    }
+
+    .dropdown-menu-icon a {
+        width: 80px;
+    }
+
+    .cartcount {
+        width: 18px;
+        height: 18px;
+        top: -8px;
+        right: -8px;
+        font-size: 10px;
+    }
+
+    button[type=submit], button[type=reset] {
+        width: auto;
+        padding: 6px;
+    }
+}

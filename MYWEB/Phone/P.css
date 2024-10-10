@@ -1,0 +1,138 @@
+/* General styles for smaller screens */
+@media (max-width: 768px) {
+    .sec-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sec-left-container, .sec-right-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .sec-left-container h4 {
+        font-size: 60px;
+    }
+
+    .sec-left-container p {
+        font-size: 40px;
+    }
+
+    .sec-left-container a {
+        width: 80%;
+        font-size: 18px;
+    }
+
+    .sec-right-container img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .category-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        margin: 1rem 0;
+    }
+
+    .content img {
+        width: 200px;
+    }
+
+    .content h2 {
+        font-size: 24px;
+    }
+
+
+    .grid-recommend{
+        /* border: 1px solid red; */
+        grid-template-columns: 1fr 1fr ;
+        gap: 12px;
+        margin: 0 auto;
+    }
+    .grid-recommend img{
+        display: block;
+        width: 130px;
+        height: 130px;
+        /* border: 1px solid red; */
+        border-radius: 1rem;
+        transition: 0.5s;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .box{
+        width: 170px;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .sec-nav{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        width: 90%;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+
+    #filter-buttons{
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+    }
+
+    .sec-nav button{
+        width: 70px;
+        text-align: center;
+        margin: 0 3px;
+        /* border: 1px solid red; */
+    }
+
+    .sec-nav input{
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+
+/* Styles for very small screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .sec-left-container h4 {
+        font-size: 40px;
+    }
+
+    .sec-left-container p {
+        font-size: 30px;
+    }
+
+    .sec-left-container a {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .sec-right-container img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .content img {
+        width: 150px;
+    }
+
+    .content h2 {
+        font-size: 20px;
+    }
+
+    .recommend {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .recommend h1 {
+        font-size: 40px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}

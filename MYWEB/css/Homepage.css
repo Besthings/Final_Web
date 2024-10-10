@@ -1,16 +1,13 @@
-
-
-section{
-    background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 227, 190));
-    /* background-image: url(../img/4_42c16d37-ae59-42d2-8b7e-0cc3328650d6_1728x.jpg); */
-    background-repeat: no-repeat;
-    background-position: center;
+.bg-img{
+    background: linear-gradient(to right, rgb(152, 188, 255), rgb(233, 252, 255), white);
+    background-position: 0 -25rem;
     background-size: cover;
     background-attachment: fixed;
-    height: 810px;
+    height: 912px;
     /* border: 1px solid transparent; */
     width: 100%;
 }
+
 
 .sec-container{
     width: 1600px;
@@ -18,9 +15,10 @@ section{
     display: flex;
     justify-content: space-around;
     /* border: 1px solid red; */
-    height: 100%;
+    height: 700px;
 
 }
+
 
 .sec-left-container{
     /* border: 1px solid red; */
@@ -29,6 +27,7 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* margin-top: 4rem; */
     /* height: 600px; */
     
 }
@@ -78,18 +77,63 @@ section{
     /* border: 1px solid red; */
 }
 
-.sec-right-container{
-    margin: auto 0;
-    /* margin-left: 1rem; */
+.sec-left-container input[type=search] {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.753);
     /* border: 1px solid red; */
 }
 
-.sec-right-container img{
-    width: 700px;
-    /* position: absolute; */
+.sec-right-container {
+    margin-top: 5rem;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* border: 1px solid red; */
-    
 }
+ .item{
+    transition: 0.5s ease; /* Transition สำหรับเปลี่ยนสี */
+    border-radius: 2rem;
+ }
+
+
+.box-color {
+    width: 600px; /* ปรับขนาดให้เล็กลง */
+    height: 500px; /* ปรับขนาดให้เล็กลง */
+    position: relative;
+    border-radius: 2rem;
+    /* overflow: hidden; */
+    /* background-color: rgba(179, 215, 255, 0.8); */
+    transition: 0.5s ease; /* Transition สำหรับเปลี่ยนสี */
+}
+
+.box-color:hover{
+    box-shadow: 0 0 15px gray;
+    filter: brightness(1.1);
+}
+
+.slideshow-image {
+    width: 100%; /* ให้ภาพขยายเต็มความกว้าง */
+    height: 100%; /* ให้ภาพขยายเต็มความสูง */
+    /* object-fit: cover; ทำให้ภาพเต็มพื้นที่โดยไม่สูญเสียสัดส่วน */
+    position: relative;
+    right: -10rem;
+    filter: drop-shadow(3px 3px 8px rgb(66, 66, 66));
+}
+
+
+.slideshow-content {
+    position: absolute;
+    width: 32%;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 2rem;
+}
+
 
 .category{
     display: flex;
@@ -102,6 +146,9 @@ section{
     text-align: center;
     font-size: 60px;
     color: brown;
+    padding: 1rem;
+    border-bottom: 2px solid gray;
+    width: 1300px;
     text-shadow: 3px 3px 3px gray;
 }
 
@@ -125,6 +172,8 @@ section{
 
 .content img{
     width: 260px;
+    height: 260px;
+    border-radius: 50%;
     /* border: 1px solid red; */
 }
 
@@ -137,15 +186,16 @@ section{
 }
 
 .content:hover{
-    opacity: 0.7;
+    opacity: 0.8;
     transition: 0.5s;
-    margin: 1rem;
+    /* margin: 1rem; */
+    filter: drop-shadow(0 0 15px black);
 }
 
 /* recommend */
 
 .recommend{
-    width: 1200px;
+    width: 1320px;
     /* border:  1px solid red; */
     margin: 0 auto;
 }
@@ -155,7 +205,9 @@ section{
     margin-top: 5rem;
     font-size: 50px;
     color: brown;
+    padding: 1rem 0;
+    width: 1300px;
+    border-bottom: 2px solid gray;
     text-shadow: 3px 3px 3px gray;
     margin-bottom: 3rem;
 }
-

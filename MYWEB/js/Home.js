@@ -1,35 +1,32 @@
-// Get product ID from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
-
-// Fetch menu data from JSON file
 fetch('./json/products.json')
   .then(response => response.json())
   .then(data => {
-    // Find the product by ID
-    const product = data.find(item => item.id == productId);
+    console.log('Product Data:', data);  // ตรวจสอบข้อมูลใน Console
+    const menuContainer = document.getElementById('grid-recommend');
+    const limitedData = data.slice(0, 8);
 
-    // Display product details
-    if (product) {
-      const productDetails = document.getElementById('productDetails');
-      productDetails.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <div class="data">
-            <h2>${product.name}</h2>
-            <p><strong>Price: ฿${product.price}</strong></p>
-            <p>${product.description02}</p>
-            <button onclick="openModal(${product.id})" class="buy">Buy</button><br>
-            <button class="favor">favorite</button>
+    limitedData.forEach(item => {
+      const menuItem = document.createElement('div');
+      menuItem.classList.add('menu-item');
+
+      menuItem.innerHTML = `
+        <div class="box">
+          <a href="details.html?id=${item.id}">
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>${item.description01}</p>
+          </a>
+          <span>฿${item.price}</span>
+          <button onclick="openModal(${item.id})" class="buy">Buy</button>
         </div>
       `;
-    } else {
-      document.getElementById('productDetails').innerHTML = '<p>Product not found!</p>';
-    }
+
+      menuContainer.appendChild(menuItem);
+    });
   })
-  .catch(error => console.error('Error loading product details:', error));
+  .catch(error => console.error('Error loading menu:', error));
 
-
-    // เปิด Modal เมื่อคลิกปุ่ม Buy
+// เปิด Modal เมื่อคลิกปุ่ม Buy
 function openModal(itemId) {
   // หา product จาก JSON ด้วย ID
   fetch('./json/products.json')
@@ -37,14 +34,13 @@ function openModal(itemId) {
     .then(products => {
       const product = products.find(p => p.id === itemId);
       if (product) {
-        // อัพเดตข้อมูลใน Modal
+        // อัปเดตข้อมูลใน Modal
         document.getElementById('modal-product-name').textContent = product.name;
         document.getElementById('modal-product-description').textContent = product.description01;
         document.getElementById('modal-product-price').textContent = `฿${product.price}`;
 
         // แสดง Modal
         document.getElementById('buy-modal').style.display = 'block';
-
 
         // เมื่อคลิกปุ่ม Yes
         document.getElementById('confirm-buy').onclick = function() {
@@ -114,3 +110,57 @@ function updateCartCount() {
 
 // เรียกใช้ฟังก์ชันนี้เพื่อแสดงจำนวนสินค้าในตะกร้าเมื่อโหลดหน้าเว็บ
 updateCartCount();
+
+
+fetch('./json/products.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Product Data:', data);  // ตรวจสอบข้อมูลใน Console
+    const owlCarousel = document.querySelector('.owl-carousel');
+
+    // ระบุเฉพาะ ID ที่ต้องการ
+    const selectedIds = [5, 3, 7];
+
+    // กรองเฉพาะสินค้าที่มี ID ตรงกับ selectedIds
+    const filteredData = data.filter(item => selectedIds.includes(item.id));
+
+    // สร้าง item สำหรับแต่ละสินค้าใน filteredData
+    filteredData.forEach(item => {
+      const menuItem = document.createElement('div');
+      menuItem.classList.add('item');
+      menuItem.setAttribute('data-color', item.color || '#ffffff'); // กำหนดสีพื้นหลัง
+
+      menuItem.innerHTML = `
+        <img class="slideshow-image" src="${item.image}" alt="${item.name}" style="width: 500px;">
+        <div class="slideshow-content">
+          <h3 id="item-title">${item.name}</h3>
+          <p id="item-description">${item.description01}</p>
+          <span id="item-price">฿${item.price}</span>
+          <button onclick="openModal(${item.id})" class="buy">Buy</button>
+        </div>
+      `;
+
+      owlCarousel.appendChild(menuItem);
+    });
+
+    // เรียกใช้งาน Owl Carousel
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      nav: true,
+      navText: ['<', '>'],
+      onChanged: function(event) {
+        // เปลี่ยนสีพื้นหลังเมื่อเลื่อนไปยังสไลด์ใหม่
+        var currentIndex = event.item.index;
+        var currentItem = $('.owl-carousel .item').eq(currentIndex);
+        var newColor = currentItem.attr('data-color');
+        $('.box-color').css('background-color', newColor);  // เปลี่ยนสีของ box-color
+      }
+    });
+  })
+  .catch(error => console.error('Error loading products:', error));
+
+

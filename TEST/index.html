@@ -3,47 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Owl Carousel Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
-        .product-list {
+        .sec-right-container {
+            width: 100%;
             display: flex;
-            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid red;
         }
-        .product {
-            border: 1px solid #ccc;
+
+        .box-color {
+            width: 800px;
+            height: 550px;
+            position: relative;
+            border-radius: 3rem;
+            /* overflow: hidden; */
+            background-color: rgba(179, 215, 255, 0.8);
+        }
+
+        .slideshow-image {
+            width: 20px;
+        }
+
+        .slideshow-content {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            margin: 10px;
-            width: 150px;
-            text-align: center;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border: 1px solid #000;
-        }
-        .modal.show {
-            display: block;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div class="product-list" id="product-list"></div>
-
-    <div class="modal" id="product-modal">
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
-        <p id="modal-price"></p>
-        <img id="modal-image" src="" alt="Product Image">
-        <button id="close-modal">Close</button>
+<div class="sec-right-container">
+    <div class="box-color">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img class="slideshow-image" src="../MYWEB/img/image-removebg-preview.png" alt="Labubu 1">
+                <div class="slideshow-content">
+                    <h3 id="item-title">Labubu 1</h3>
+                    <p id="item-description">Labubu is so expensive.</p>
+                    <span id="item-price">400฿</span>
+                    <button onclick="openModal()" class="buy">Buy</button>
+                </div>
+            </div>
+            <div class="item">
+                <img class="slideshow-image" src="../MYWEBimg/image-removebg-preview (1).png" alt="Labubu 2">
+                <div class="slideshow-content">
+                    <h3 id="item-title">Labubu 2</h3>
+                    <p id="item-description">This is Labubu 2.</p>
+                    <span id="item-price">500฿</span>
+                    <button onclick="openModal()" class="buy">Buy</button>
+                </div>
+            </div>
+            <div class="item">
+                <img class="slideshow-image" src="../MYWEBimg/image3.png" alt="Labubu 3">
+                <div class="slideshow-content">
+                    <h3 id="item-title">Labubu 3</h3>
+                    <p id="item-description">This is Labubu 3.</p>
+                    <span id="item-price">600฿</span>
+                    <button onclick="openModal()" class="buy">Buy</button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            items: 1, // จำนวนสไลด์ที่แสดง
+            loop: true, // วนลูป
+            autoplay: true, // เปิดการเลื่อนอัตโนมัติ
+            autoplayTimeout: 3000, // เวลาที่ใช้ในการเลื่อน (3 วินาที)
+            autoplayHoverPause: true, // หยุดเลื่อนเมื่อชี้เมาส์
+            nav: true, // แสดงปุ่มนำทาง
+            navText: ['<', '>'], // ข้อความสำหรับปุ่มนำทาง
+        });
+    });
+</script>
 
 </body>
 </html>

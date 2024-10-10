@@ -1,14 +1,14 @@
 .productDetails{
     display: flex;
     margin: 0 auto;
-    border: 1px solid red;
-    width: 1200px;
+    /* border: 1px solid .red; */
+    width: 1300px;
 }
 
 .productDetails img{
     position: ab;
     width: 500px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 1rem;
     background-color: antiquewhite;
     margin: 2rem 2rem;
@@ -18,6 +18,8 @@
 .data{
     margin-top: 2rem;
     margin-left: 10rem;
+    /* border: 1px solid red; */
+    width: 100%;
 }
 
 .data h2{

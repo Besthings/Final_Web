@@ -8,36 +8,34 @@
 //     }
 // }
 
+// เปิด/ปิด dropdown เมื่อคลิกที่รูป avatar
 function toggleiconDropdown() {
-    var dropdown = document.getElementById("dropdowniconMenu");
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-    } else {
-        dropdown.style.display = "block";
+    document.getElementById("dropdowniconMenu").classList.toggle("show");
+  }
+  
+  // ตรวจสอบการคลิกนอก dropdown
+  window.onclick = function(event) {
+    // ถ้าคลิกไม่ได้อยู่บนไอคอน dropdown
+    if (!event.target.closest('.drop-btni') && !event.target.closest('.dropdown-menu-icon')) {
+      var dropdownMenu = document.getElementById("dropdowniconMenu");
+      if (dropdownMenu.classList.contains('show')) {
+        dropdownMenu.classList.remove('show'); // ปิดเมนู
+      }
     }
-}
+  }
+  
+// หาปุ่มเมนูสามขีดและ ul ของเมนู
+const menuToggle = document.getElementById('menuToggle');
+const menu = document.getElementById('hamburger-toggle');
 
+// เมื่อคลิกปุ่มสามขีดให้สลับสถานะการแสดงเมนู
+menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('active');
+});
 
-// ถ้าต้องการให้ปิด dropdown เมื่อคลิกนอกเมนู
-window.onclick = function(event) {
-    // ตรวจสอบว่าคลิกไม่ได้อยู่ที่ปุ่มใดปุ่มหนึ่ง
-    if (!event.target.matches('.drop-btni') && !event.target.matches('.drop-btni')) {
-        // ปิด dropdown-menu ของปุ่มธรรมดา
-        // var dropdowns = document.getElementsByClassName("dropdown-menu");
-        // for (var i = 0; i < dropdowns.length; i++) {
-        //     var openDropdown = dropdowns[i];
-        //     if (openDropdown.style.display === "block") {
-        //         openDropdown.style.display = "none";
-        //     }
-        // }
-        
-        // ปิด dropdown-menu ของปุ่มไอคอน
-        var dropdownIconMenus = document.getElementsByClassName("dropdown-menu-icon");
-        for (var i = 0; i < dropdownIconMenus.length; i++) {
-            var openDropdown = dropdownIconMenus[i];
-            if (openDropdown.style.display === "block") {
-                openDropdown.style.display = "none";
-            }
-        }
-    }
-}
+document.addEventListener('click', function(event) {
+  // ถ้าคลิกนอกปุ่มสามขีดและเมนู ให้ปิดเมนู
+  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+      menu.classList.remove('active');
+  }
+});
