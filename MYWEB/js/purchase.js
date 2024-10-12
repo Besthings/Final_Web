@@ -1,9 +1,22 @@
 // ฟังก์ชันสำหรับเคลียร์สินค้าทั้งหมดในตะกร้า
 function clearCart() {
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+
+  // ตรวจสอบว่ามีสินค้าหรือไม่
+  if (Object.keys(cartItems).length === 0) {
+    Swal.fire({
+      title: 'Cart is Empty!',
+      text: 'There are no items in your cart to clear.',
+      icon: 'warning',
+      confirmButtonText: 'OK'
+    });
+    return; // หยุดการทำงานของฟังก์ชัน
+  }
+
   // ลบข้อมูลสินค้าทั้งหมดใน localStorage
   localStorage.removeItem('cartItems');
   localStorage.removeItem('purchasedItems');
-  
+
   // ลบการแสดงผลสินค้าในหน้าเว็บ
   const cartItemsContainer = document.getElementById('cart-items');
   cartItemsContainer.innerHTML = '';
@@ -19,6 +32,7 @@ function clearCart() {
   // อัปเดตจำนวนสินค้าในตะกร้า
   updateCartCount();
 }
+
 
 // ฟังก์ชันอัปเดตจำนวนสินค้าในตะกร้า (navbar)
 function updateCartCount() {
@@ -57,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="btn btn-primary" onclick="changeQuantity('${item.id}', 1)">Increase</button>
                 <button class="btn btn-danger" onclick="changeQuantity('${item.id}', -1)">Decrease</button>
                 <button class="btn btn-warning" onclick="removeItem('${item.id}')">Remove</button>
-                
               </div>
             </div>
           `;
@@ -117,7 +130,7 @@ function changeQuantity(itemId, change) {
           // ถ้าไม่ลบสินค้า ให้คืนค่าเป็น 1
           cartItemsCounts[itemId] = 1;
           localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
-          
+
           // อัปเดตการแสดงผลจำนวนสินค้า
           const quantityElement = document.getElementById(`quantity-${itemId}`);
           if (quantityElement) {
@@ -154,7 +167,6 @@ function changeQuantity(itemId, change) {
     updateCartCount();
   }
 }
-
 
 // ฟังก์ชันสำหรับลบสินค้ารายการเฉพาะ
 function removeItem(itemId) {

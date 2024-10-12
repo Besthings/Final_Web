@@ -1,59 +1,37 @@
-.sec-right-container {
-  display: flex;
-  justify-content: center; /* จัดให้อยู่ตรงกลาง */
-  align-items: center; /* จัดให้กลางแนวตั้ง */
-  margin-top: 12rem; /* ระยะห่างด้านบน */
+body {
+  background: linear-gradient(to bottom right, #f0e7ff, #e0f7fa);
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-.box-color {
-  width: 500px; /* ขนาดความกว้างของกล่อง */
-  height: 350px; /* ขนาดความสูงของกล่อง */
-  background-color: rgba(179, 215, 255, 0.8); /* สีพื้นหลัง */
-  border-radius: 3rem; /* มุมโค้ง */
-  padding: 2rem; /* ระยะห่างภายใน */
-  position: relative; /* สำหรับการวางตำแหน่งของภาพ */
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  color: #ff6f61; /* สีชมพูสด */
 }
 
-.box-color img {
-  width: 100%; /* ทำให้ภาพขยายเต็มพื้นที่ */
-  height: auto; /* รักษาสัดส่วน */
-  position: absolute; /* วางตำแหน่งภาพในกล่อง */
-  top: 0; /* เริ่มต้นที่ด้านบน */
-  left: 0; /* เริ่มต้นที่ด้านซ้าย */
-  filter: drop-shadow(10px 10px 10px rgb(77, 77, 77)); /* เงาภาพ */
-  transition: ease-in-out 0.5s; /* การเปลี่ยนภาพอย่างนุ่มนวล */
+h2 {
+  font-size: 2rem;
 }
 
-.box-color .slideshow {
-  position: relative;
-  text-decoration: none; /* ลบเส้นใต้ */
-  color: white; /* สีตัวอักษร */
-  background-color: rgba(48, 48, 48, 0.493); /* สีพื้นหลังของข้อความ */
-  border-radius: 2rem; /* มุมโค้ง */
-  padding: 1rem; /* ระยะห่างภายใน */
-  width: 50%; /* ความกว้าง */
-  height: 100%; /* ความสูง */
-  display: flex; /* ใช้ flexbox */
-  flex-direction: column; /* แนวตั้ง */
-  align-items: center; /* จัดกลาง */
-  justify-content: center; /* จัดกลาง */
+.button {
+  background-color: #ff9800; /* สีส้ม */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.swiper {
-  width: 100%; /* ความกว้าง */
-  height: 100%; /* ความสูง */
+.button:hover {
+  background-color: #ff5722; /* สีส้มเข้ม */
 }
 
-.swiper-slide {
-  display: flex; /* ใช้ flexbox */
-  flex-direction: column; /* แนวตั้ง */
-  align-items: center; /* จัดกลาง */
-  justify-content: center; /* จัดกลาง */
-  text-align: center; /* จัดกลางข้อความ */
-  padding: 1rem; /* ระยะห่างภายใน */
-}
-
-.slideshow-image {
-  width: 100%; /* ทำให้ภาพขยายเต็มพื้นที่ */
-  height: auto; /* รักษาสัดส่วน */
+.sale-banner {
+  background: #ffeb3b; /* สีเหลืองสด */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }

@@ -28,8 +28,7 @@ fetch('./json/products.json')
   })
   .catch(error => console.error('Error loading product details:', error));
 
-
-    // เปิด Modal เมื่อคลิกปุ่ม Buy
+// เปิด Modal เมื่อคลิกปุ่ม Buy
 function openModal(itemId) {
   // หา product จาก JSON ด้วย ID
   fetch('./json/products.json')
@@ -44,7 +43,6 @@ function openModal(itemId) {
 
         // แสดง Modal
         document.getElementById('buy-modal').style.display = 'block';
-
 
         // เมื่อคลิกปุ่ม Yes
         document.getElementById('confirm-buy').onclick = function() {

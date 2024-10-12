@@ -20,14 +20,17 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    /* border: 1px solid red; */
 }
 
 .sec-nav button{
     outline: none;
     border: none;
-    width: 100px;
+    width: 120px;
     padding: 0.2rem;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
+    /* border: 1px solid red; */
+
 }
 
 .sec-nav input{
@@ -35,7 +38,15 @@
     outline: none;
     border: 1px solid gray;
     width: 250px;
-    padding: 0 0.5rem;
+    padding: 0.2rem 1rem;
+    margin-bottom: 2rem;
+    /* border: 1px solid red; */
+
+}
+
+.fa{
+    font-size: 20px;
+    color: rgb(46, 46, 46);
 }
 
 #filter-buttons button{

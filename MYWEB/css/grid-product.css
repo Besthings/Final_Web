@@ -2,10 +2,9 @@
 .grid-recommend{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem;
     /* border: 1px solid red; */
-    margin: 0 auto;
-    /* margin-left: 3rem; */
+    /* margin: 0 auto; */
 }
 
 .grid-recommend img{
@@ -18,12 +17,17 @@
     transition: 0.5s;
 }
 
+.menu-item{
+  /* border: 1px solid red; */
+  margin: 0 auto;
+}
 
 .box{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 280px;
+  max-width: 280px;
+  width: 100%;
   height: 100%;
   border-radius: 1rem 1rem 0 0;
   transition: 0.5s;
@@ -70,7 +74,7 @@
 }
 
 /* Styles สำหรับ Modal */
-.modal {
+  #buy-modal {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -80,6 +84,7 @@
     height: 100%; 
     background-color: rgba(0,0,0,0.5); 
   }
+
   
   .modal-content {
     background-color: white;
@@ -91,6 +96,8 @@
   
   .close {
     color: #aaa;
+    /* border: 1px solid red; */
+    width: 30px;
     float: right;
     font-size: 28px;
     font-weight: bold;
